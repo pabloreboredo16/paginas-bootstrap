@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Selección de Orígenes">
+    <meta name="author" content="Pablo Reboredo">
+    <title>Café de Especialidad</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <meta name="theme-color" content="#712cf9">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem
+            }
+        }
+
+        .product-device {
+            position: absolute;
+            right: 10%;
+            bottom: -30px;
+            width: 300px;
+            height: 540px;
+            background-color: #333;
+            border-radius: 21px;
+            transform: rotate(30deg);
+            overflow: hidden;
+            z-index: 1;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s ease;
+        }
+
+        .product-device-2 {
+            top: -10%;
+            right: auto;
+            left: 10%;
+            background-color: #e5e5e5;
+        }
+
+        .product-device:hover {
+            transform: rotate(25deg) translateY(-15px) scale(1.03);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25) !important;
+        }
+
+        .product-device-2:hover {
+            transform: rotate(35deg) translateY(15px) scale(1.03);
+        }
+
+        .my-3.p-3,
+        .my-3.py-3 {
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mx-auto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .overflow-hidden img {
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.3s ease;
+        }
+
+        .flex-fill:hover img {
+            transform: scale(1.08);
+            filter: contrast(1.05) brightness(1.05);
+        }
+
+        .flex-fill {
+            transition: box-shadow 0.4s ease, transform 0.4s ease;
+        }
+
+        .flex-fill:hover {
+            z-index: 2;
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+        }
+
+        .badge {
+            transition: transform 0.3s ease;
+        }
+
+        .flex-fill:hover .badge {
+            transform: scale(1.1);
+        }
+
+        .icon-link {
+            transition: gap 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .icon-link:hover {
+            gap: 0.75rem !important;
+            color: #0d6efd;
+        }
+
+        footer a {
+            transition: color 0.2s ease, padding-left 0.2s ease;
+        }
+
+        footer a:hover {
+            color: #212529 !important;
+            padding-left: 4px;
+        }
+
+        [data-bs-theme="dark"] footer a:hover {
+            color: #f8f9fa !important;
+        }
+    </style>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path
+                d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+            </path>
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+            <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4 Play}zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+            </path>
+        </symbol>
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+            </path>
+        </symbol>
+    </svg>
+
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand d-md-none" href="#">
+                <svg class="bi" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="#aperture"></use>
+                </svg>
+                Café de Origen Y Especialidad
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                aria-controls="offcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasLabel">Aperture</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 justify-content-between">
+                        <li class="nav-item"><a class="nav-link" href="#" aria-label="Aperture">
+                                <svg class="bi" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#aperture"></use>
+                                </svg> </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Suscripciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Micro-lotes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Tueste Semanal</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Soporte</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Precios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" aria-label="Cart">
+                                <svg class="bi" width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#cart"></use>
+                                </svg> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+            <div class="col-md-6 p-lg-5 mx-auto my-5" style="position: relative; z-index: 2;">
+                <h1 class="display-3 fw-bold">Café de Especialidad</h1>
+                <h3 class="fw-normal text-muted mb-3">Granos seleccionados a mano con trazabilidad directa desde su
+                    origen.</h3>
+                <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                    <a class="icon-link" href="https://es.wikipedia.org/wiki/Caf%C3%A9" target="_blank">
+                        Cultura del café
+                        <svg class="bi" aria-hidden="true">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                    <a class="icon-link" href="#">
+                        Comprar Variedades
+                        <svg class="bi" aria-hidden="true">
+                            <use xlink:href="#chevron-right"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block">
+                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=400&h=700&auto=format&fit=crop"
+                    alt="Café de Especialidad" class="w-100 h-100">
+            </div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=400&h=700&auto=format&fit=crop"
+                    alt="Granos tostados" class="w-100 h-100">
+            </div>
+        </div>
+
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 pe-md-3">
+            <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">Colombia</h2> <span class="badge bg-warning text-dark fs-6">Variedad
+                        Caturra</span>
+                    <p class="lead mt-3">Café procesado por vía húmeda (lavado). Altura de 1.750m.</p>
+                    <p class="text-white-50">Notas dulces a panela, frutos rojos maduros y un retrogusto limpio y
+                        persistente.</p>
+                    <p><strong class="d-block mt-2 text-warning">Desde 9,80€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Colombia" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnIwN9zuVTvrXQklW3d5lkL_-bANNo9lJK-FSEh4OnXc6gCZX5qd5P5j1R&s=10"
+                            alt="Café de Colombia">
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-body-tertiary pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Etiopía</h2> <span class="badge bg-success fs-6">Proceso Natural</span>
+                    <p class="lead mt-3">El origen del café arábica. Cultivado a 2.100m.</p>
+                    <p class="text-muted"> Perfil marcado, floral y complejo, con intensas notas a jazmín, arándanos y
+                        té negro.</p>
+                    <p><strong class="d-block mt-2 text-success">Desde 11,20€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Etiop%C3%ADa" target="_blank">
+                        <img src="https://blackjebena.com/cdn/shop/articles/etiopia_e05cfd3a-3dd7-4bae-9c42-6693e9924a47.jpg?v=1773397080"
+                            alt="Café de Etiopía">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 pe-md-3">
+            <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">Brasil</h2> <span class="badge bg-light text-primary fs-6">Bourbon
+                        Amarillo</span>
+                    <p class="lead mt-3">Proceso "Pulped Natural". Granos con cuerpo denso y cremoso.</p>
+                    <p class="text-white-50">Notas clichés a chocolate con leche, avellana tostada y baja acidez.</p>
+                    <p><strong class="d-block mt-2 text-white">Desde 8,90€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Brasil" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1DZzAHkNRabc5H6mCvwpmPsqGdrDjrZkM-O1L7Gx9eVuA2QRzWEzj5Po&s=10"
+                            alt="Café de Brasil">
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Kenia</h2> <span class="badge bg-info text-dark fs-6">Clasificación Grado
+                        AA</span>
+                    <p class="lead mt-3">Doble lavado volcánico. Altura extrema de 1.800m.</p>
+                    <p class="text-white-50">Una explosión de acidez jugosa con notas de grosella negra, uva y pomelo
+                        rosa.</p>
+                    <p><strong class="d-block mt-2 text-info">Desde 12,50€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Kenia" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvDoNGC-dUtDAUugXz5hospOCAtuPKsvIIhxe3UEhHzfC8euBoX1g-Gw5A&s=10"
+                            alt="Café de Kenia">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 pe-md-3">
+            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">Costa Rica</h2> <span class="badge bg-danger fs-6">Variedad Geisha</span>
+                    <p class="lead mt-3">Finca de Tarrazú. Proceso "White Honey".</p>
+                    <p class="text-muted">Café de élite y elegancia extrema, melocotón, bergamota y miel de azahar.</p>
+                    <p><strong class="d-block mt-2 text-danger">Desde 14,90€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Costa_Rica" target="_blank">
+                        <img src="https://tuccitea.com/wp-content/uploads/2021/06/15134-CAFE-COSTA-RICA-NARANJO-1.png"
+                            alt="Café de Costa Rica">
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-bg-primary pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Guatemala</h2> <span class="badge bg-dark fs-6">Antigua Classic</span>
+                    <p class="lead mt-3">Variedad Caturra. Sombra volcánica.</p>
+                    <p class="text-white-50">Equilibrio entre cuerpo y acidez, con notas de cacao amargo y especias
+                        dulces.</p>
+                    <p><strong class="d-block mt-2 text-white">Desde 9,50€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Guatemala" target="_blank">
+                        <img src="https://dalecafe.com.gt/wp-content/uploads/2024/04/1.png" alt="Café de Guatemala">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 pe-md-3">
+            <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">Indonesia</h2> <span class="badge bg-secondary fs-6">Giling Basah</span>
+                    <p class="lead mt-3">Método tradicional de Sumatra. Salvaje y notas terrosas.</p>
+                    <p class="text-white-50">Especiadas a cedro, tabaco dulce y cuerpo muy espeso.</p>
+                    <p><strong class="d-block mt-2 text-secondary">Desde 10,20€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Indonesia" target="_blank">
+                        <img src="https://tuccitea.com/wp-content/uploads/2021/06/14794-CAFE-INDONESIA-WEST-BLUE-JAVA.png"
+                            alt="Café de Indonesia">
+                    </a>
+                </div>
+            </div>
+            <div class="bg-body-tertiary pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden flex-fill">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Yemen</h2> <span class="badge bg-primary fs-6">Mocha Ancestral</span>
+                    <p class="lead mt-3">Cuna histórica del café. Cultivo en terrazas de alta montaña.</p>
+                    <p class="text-muted">Perfil exótico, notas a vino añejo, canela y frutos secos.</p>
+                    <p><strong class="d-block mt-2 text-primary">Desde 16,00€ / 250g</strong></p>
+                </div>
+                <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0; overflow: hidden;">
+                    <a href="https://es.wikipedia.org/wiki/Yemen" target="_blank">
+                        <img src="https://news.nateimg.co.kr/orgImg/hi/2023/08/29/6dc5c972-20bd-4966-be9b-85a4b01f6d2e.jpg"
+                            alt="Café de Yemen">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                    viewBox="0 0 24 24">
+                    <title>Aperture Coffee</title>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                        d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+                    </path>
+                </svg>
+                <small class="d-block mb-3 text-body-secondary">&copy; 2026 Pablo Reboredo</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Especialidad</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Tueste Semanal</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Micro-lotes</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Guía del Barista</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Suscripción</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Recursos</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Métodos V60</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Trazabilidad</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Blog</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Fair Trade</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Fincas Asociadas</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Sostenibilidad</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Impacto Social</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Residuos 0</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Empresa</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="link-secondary text-decoration-none" href="#">Ubicaciones</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Puntos de Venta</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Privacidad</a></li>
+                    <li><a class="link-secondary text-decoration-none" href="#">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

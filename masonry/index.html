@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Astro v5.13.2">
+    <title>Pablo Reboredo - Locales Vigo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="theme-color" content="#712cf9" />
+
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+        }
+
+        .site-header p.lead a,
+        a.text-primary,
+        main a {
+            color: #ff3c6e;
+            text-decoration: none;
+        }
+
+        main a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: #1a1a1a;
+            color: #666;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: solid rgba(255, 255, 255, 0.05);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .5), inset 0 .125em .5em rgba(0, 0, 0, .3);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-scroller .nav-link {
+            color: #aaa;
+        }
+
+        .nav-scroller .nav-link:hover {
+            color: #fff;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .bi {
+            width: 1em;
+            height: 1em;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block;
+        }
+
+        .card {
+            background-color: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 0.6rem;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 60, 110, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 60, 110, 0.1);
+        }
+
+        .card-img,
+        .card img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card:hover .card-img,
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-title {
+            color: #fff;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .card-text {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-quote {
+            background-color: #161616;
+            border-color: rgba(255, 60, 110, 0.15);
+        }
+
+        .card-quote:hover {
+            border-color: rgba(255, 60, 110, 0.5);
+        }
+
+        .card-quote .blockquote p {
+            color: #fff;
+            font-style: italic;
+        }
+
+        .badge {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.55rem;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            display: inline-block;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container py-5">
+
+        <div class="text-center my-4">
+            <h1>Locales en Vigo</h1>
+            <p class="lead">Descubre los mejores locales de Vigo</p>
+            <p class="text-light-emphasis">Una radiografía real de la noche de Vigo a través de los locales, estilos y
+                códigos que definen la cultura de club de la ciudad.</p>
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
+
+            <!-- Doppler -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://cd1.taquilla.com/data/images/t/a6/sala-doppler.webp" alt="Sala Doppler"
+                        loading="lazy" style="height:200px;">
+                    <div class="card-body">
+                        <span class="badge bg-dark mb-2">CONCIERTOS - URBANO</span>
+                        <h5 class="card-title">Sala Doppler</h5>
+                        <p class="card-text">
+                            Sala de conciertos y eventos en vivo con programación variada, desde rock hasta propuestas
+                            urbanas y sesiones especiales.
+                            Ambiente de club-sala, dirigido a público que busca música en directo y noches temáticas en
+                            un espacio compacto del centro.
+                        </p>
+                        <div class="card-meta">
+                            <span>Xo - Sáb · 00:30 - 04:30, 05:00</span>
+                            <span>Churruca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mondo -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://metropolitano.gal/wp-content/uploads/2022/05/mondoclub.jpg" alt="Discoteca Mondo"
+                        loading="lazy" style="height:200px;">
+                    <div class="card-body">
+                        <span class="badge bg-warning mb-2">ELECTRONICA - ALTERNATIVO</span>
+                        <h5 class="card-title">Mondo Club</h5>
+                        <p class="card-text">
+                            Club nocturno y sala de conciertos con dos ambientes diferenciados, centrados en electrónica
+                            y sonidos de club contemporáneos.
+                            Es un referente de la escena alternativa de Vigo, con noches de DJ y directos pensadas para
+                            alargar la madrugada.
+                        </p>
+                        <div class="card-meta">
+                            <span>Ven - Sáb · 01:30 - 06:30</span>
+                            <span>Churruca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card card-quote p-3">
+                    <figure class="p-2 mb-0">
+                        <blockquote class="blockquote">
+                            <p>Herencia Sonora</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            El mapa nocturno de Vigo está fuertemente marcado por la acústica de sus locales.
+                            Gran parte de los pubs subterráneos de Churruca mantienen las estructuras originales de
+                            piedra vista del siglo XIX,
+                            lo que otorga a las frecuencias bajas de la electrónica y el rock un eco denso y con mucha
+                            personalidad.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Havana 20 -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://estaticos-cdn.prensaiberica.es/clip/e351a2eb-0b62-4a3e-9b11-46df915b5153_alta-libre-aspect-ratio_default_0.jpg"
+                        alt="Havana 20" loading="lazy" style="height:200px;">
+                    <div class="card-body">
+                        <span class="badge bg-danger mb-2">PUB - VARIADO</span>
+                        <h5 class="card-title">Havana 20</h5>
+                        <p class="card-text">
+                            Pub clásicocentrado en copas, ambiente de bar de siempre con el clásico Super 2 y música de
+                            fondo.
+                        </p>
+                        <p class="card-text">
+                            Punto de encuentro para ir de copas tranquilo dentro del circuito nocturno tradicional de
+                            Vigo.
+                        </p>
+                        <div class="card-meta">
+                            <span>Mar - Sáb · 19:30 - 01:30, 05:00</span>
+                            <span>Churruca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kominsky -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://planimagesstorage.blob.core.windows.net/planimage1/venues/tmpanv1bzvb.jpg"
+                        alt="Bar Kominsky" loading="lazy" style="height:200px;">
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">VARIADO - ALTERNATIVO</span>
+                        <h5 class="card-title">Kominsky</h5>
+                        <p class="card-text">
+                            Sala de conciertos y pub donde disfrutar de tus copas y bebidas favoritas y de la mejor
+                            música en directo.
+                            La sala Kominsky es un espacio en el que todo puede pasar: conciertos, recitales, jams,
+                            teatro, varietés o danza.
+                        </p>
+                        <div class="card-meta">
+                            <span>Ven - Sáb · 19:00 - 05:00</span>
+                            <span>Churruca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transilvania -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://cd1.taquilla.com/data/images/t/82/sala-transylvania.jpg" alt="Transilvania"
+                        loading="lazy" style="height:200px;">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">ROCK</span>
+                        <h5 class="card-title">Transilvania</h5>
+                        <p class="card-text">
+                            Pub metal/rock donde se pincha casi exclusivamente rock y metal, con agenda de conciertos en
+                            directo
+                            y un seguimiento muy fiel de la escena local.
+                            Es un “templo” para amantes del metal, con ambiente áspero pero cercano.
+                        </p>
+                        <div class="card-meta">
+                            <span>Ven - Sáb · 23:00 - 05:00</span>
+                            <span>Churruca</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bar Tolo -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="https://www.paxinasgalegas.es/imagenes/bar-tolo_img513618t0m0w1600h800.jpg" alt="Bar Tolo"
+                        loading="lazy" style="height:200px;">
+                    <div class="card-body">
+                        <span class="badge bg-info mb-2">CHUPITOS</span>
+                        <h5 class="card-title">Bar Tolo</h5>
+                        <p class="card-text">
+                            Bar de copas y bocadillos centrado en ambiente nocturno y horarios típicos de “entrada” y
+                            “after” en la zona de Loriga.
+                            Es un punto de encuentro para grupos que buscan algo informal antes o después de ir a la
+                            sala.
+                        </p>
+                        <div class="card-meta">
+                            <span>Ven · 20:30 - 3:00, Sáb · 9:00 - 3:00</span>
+                            <span>Rúa de Joaquín Loriga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card card-quote p-3">
+                    <figure class="p-2 mb-0">
+                        <blockquote class="blockquote">
+                            <p>Dinámica Urbana</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            La noche olívica se divide en dos grandes almas separadas por apenas unas calles: el
+                            circuito de Churruca,
+                            gobernado históricamente por el espíritu underground, el rock y la electrónica de club;
+                            frente a la zona de Arenal,
+                            tradicionalmente volcada hacia sonidos más comerciales, ritmos latinos y clubs de gran
+                            formato.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card card-quote p-3">
+                    <figure class="p-2 mb-0">
+                        <blockquote class="blockquote">
+                            <p>Cronología Nocturna</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            Vigo es una de las ciudades del norte de España con los horarios de ocio más tardíos.
+                            Debido a la normativa de la comunidad gallega y a las costumbres locales, la transición de
+                            los pubs a las
+                            disotecas principales de la ciudad ocurre de manera natural pasadas las tres de la
+                            madrugada, estirando las pistas hasta el amanecer.
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pt-3 mt-4 text-white border-top">
+            &copy; 2026 Pablo Reboredo
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

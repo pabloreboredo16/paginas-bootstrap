@@ -1,0 +1,104 @@
+body {
+  background: #eef2f7; 
+  font-family: sans-serif;
+  color: #5e72e4;
+  margin: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+}
+
+.pricing-header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background: #eef2f7;
+  padding: 1.5rem;
+  font-weight: bold;
+  color: #5e72e4;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.pricing-card-title {
+  color: #5e72e4;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  background: #5e72e4;
+  color: #fff;
+  padding: 12px;
+}
+
+.table td, .table th {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-lg {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: #5e72e4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-outline-primary {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  color: #5e72e4;
+  border: 2px solid #5e72e4;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner-small {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80') center/cover;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}

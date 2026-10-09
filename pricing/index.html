@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Planes de precios para el curso de programación FullStack" />
+  <meta name="author" content="Curso de Programación" />
+  <title>Precios - Curso de Programación</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta name="theme-color" content="#712cf9" />
+  <link href="pricing.css" rel="stylesheet" />
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
+      </path>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+      </path>
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+      </path>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+      </path>
+    </symbol>
+    <symbol id="check" viewBox="0 0 16 16">
+      <title>Check</title>
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
+      </path>
+    </symbol>
+  </svg>
+
+  <div class="container py-3">
+    <header>
+      <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+          <span class="fs-4 fw-bold">Coding Academy</span>
+        </a>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Temario</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Nuestros profesores</a>
+          <a class="py-2 link-body-emphasis text-decoration-none" href="#">Precios</a>
+        </nav>
+      </div>
+
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">Elige tu plan de estudios</h1>
+        <p class="fs-5 text-body-secondary">
+          Domina las tecnologías más demandadas. Todos nuestros planes incluyen acceso a la plataforma 24/7 y proyectos
+          reales.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+          <span class="text-body-secondary me-2 align-self-center">Especialízate en:</span>
+          <a href="https://www.java.com/es/" class="btn btn-sm btn-outline-secondary rounded-pill">Java</a>
+          <a href="https://learn.microsoft.com/es-es/cpp/windows/latest-supported-vc-redist?view=msvc-170"
+            class="btn btn-sm btn-outline-secondary rounded-pill">C++</a>
+          <a href="https://es.python.org/" class="btn btn-sm btn-outline-secondary rounded-pill">Python</a>
+          <a href="https://www.mysql.com/" class="btn btn-sm btn-outline-secondary rounded-pill">MySQL</a>
+          <a class="btn btn-sm btn-outline-secondary rounded-pill">Y mas...</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mb-4">
+      <div class="banner-small shadow">
+        <h2 class="banner-title">Personaliza a traves de la app</h2>
+        <a class="btn btn-primary rounded-pill px-4" href="#">Descarga la app</a>
+      </div>
+    </div>
+
+    <main>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mb-3 text-center">
+        <!-- Plan Prueba Gratuita -->
+        <div class="col">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0">Prueba</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/3 días</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Acceso limitado</li>
+                <li>Intro a la plataforma</li>
+                <li>Sin compromiso</li>
+                <li>Cancelacion</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-outline-primary">Prueba gratis</button>
+            </div>
+          </div>
+        </div>
+        <!-- Plan Mensual -->
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Mensual</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $49<small class="text-body-secondary fw-light">/mes</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Todos los cursos</li>
+                <li>Proyectos prácticos</li>
+                <li>Soporte por email</li>
+                <li>Certificado digital</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">
+                Suscribirse
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan Semestral -->
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Semestral</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $39<small class="text-body-secondary fw-light">/mes</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Ahorra un 20%</li>
+                <li>Tutorías en grupo</li>
+                <li>Soporte prioritario</li>
+                <li>Acceso a comunidad</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">
+                Suscribirse
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Plan Anual -->
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Anual</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $29<small class="text-body-secondary fw-light">/mes</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Ahorra 40%</li>
+                <li>Mentoría 1 a 1</li>
+                <li>CV/Linkedin</li>
+                <li>Bolsa de empleo</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">
+                Suscribirse
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="display-6 text-center mb-4">Compara los beneficios</h2>
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 28%"></th>
+              <th style="width: 18%">Prueba</th>
+              <th style="width: 18%">Mensual</th>
+              <th style="width: 18%">Semestral</th>
+              <th style="width: 18%">Anual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Acceso a Video-Cursos</th>
+              <td>Limitado</td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Comunidad de Alumnos</th>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Tutorías en vivo</th>
+              <td></td>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Descarga de recursos</th>
+              <td></td>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Mentoría Personalizada</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Garantía de Empleo</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><svg class="bi" width="24" height="24">
+                  <use xlink:href="#check"></use>
+                </svg></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+        <div class="col-12 col-md">
+          <small class="d-block mb-3 text-body-secondary">&copy; 2026 Coding Academy</small>
+          <small class="d-block mb-3 text-body-secondary">Pablo Reboredo Fernandez</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Cursos</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Web Development</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Python & Data Science</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Mobile Apps</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Recursos</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Blog</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Guías Gratuitas</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Webinars</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Legal</h5>
+          <ul class="list-unstyled text-small">
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacidad</a></li>
+            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Términos de uso</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

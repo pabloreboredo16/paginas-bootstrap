@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Blog de viajes de Pablo Reboredo Fernández">
+    <meta name="author" content="Pablo Reboredo Fernández">
+    <title>Blog de viajes - Pablo Reboredo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #212529;
+            background-color: #f7f8fc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(0, 74, 155, 0.05) 0px, transparent 45%),
+                radial-gradient(at 100% 0%, rgba(0, 74, 155, 0.03) 0px, transparent 40%),
+                radial-gradient(at 100% 100%, rgba(0, 74, 155, 0.05) 0px, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        .blog-header-logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .blog-post {
+            margin-bottom: 4rem;
+        }
+
+        .blog-post-meta {
+            margin-bottom: 1.25rem;
+            color: #727272;
+        }
+
+        .blog-pagination {
+            margin-bottom: 4rem;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-link {
+            transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-1px);
+            opacity: 0.85;
+        }
+
+        .btn {
+            transition: all 0.28s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-weight: 500;
+            border-radius: 999px;
+            letter-spacing: 0.01em;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(0, 74, 155, 0.14);
+        }
+
+        .btn:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 74, 155, 0.14);
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-secondary:hover {
+            background-color: #004a9b;
+            border-color: #004a9b;
+            color: #fff;
+        }
+
+        .border,
+        .rounded,
+        .bg-body-tertiary,
+        .bg-body-secondary {
+            border-radius: 1rem !important;
+        }
+
+        .blog-post,
+        .card,
+        .p-4.mb-3,
+        .p-4,
+        .border.rounded {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+
+        .border.rounded:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .featured-card-img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 0.85rem;
+        }
+
+        .recent-post-img {
+            width: 175px;
+            height: 175px;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 0.75rem;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+            border-radius: inherit;
+        }
+
+        .hero-text-box {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 0.85rem;
+            padding: 1.5rem 1.75rem;
+            display: inline-block;
+        }
+
+        .about-widget {
+            background: linear-gradient(135deg, #e8f0fb 0%, #dde8f7 100%) !important;
+            border: 1px solid rgba(0, 74, 155, 0.12);
+        }
+
+        a {
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.9;
+        }
+
+        .table-bg-transparent {
+            --bs-table-bg: transparent;
+            --bs-table-accent-bg: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="border-bottom lh-1 py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+
+                <div class="col-4 pt-1">
+                    <a class="link-secondary" href="#">Contacto</a>
+                </div>
+
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
+                        Pablo Reboredo
+                    </a>
+                </div>
+
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sobre mí</a>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-3 border-bottom">
+            <nav class="nav nav-underline justify-content-between">
+                <a class="nav-item nav-link link-body-emphasis active" href="#">Todos</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Europa</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">España</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Gastronomía</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Ciudades</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Cultura</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Festivales</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Consejos</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Alojamiento</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Fotografía</a>
+            </nav>
+        </div>
+    </div>
+
+
+    <main class="container">
+
+        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary position-relative overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Vilnius_-_Panorama_02.jpg/1920px-Vilnius_-_Panorama_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=parser&utm_content=thumbnail"
+                alt="Imagen de fondo — Vilna" class="hero-img" aria-hidden="true">
+            <div class="col-lg-6 px-0 position-relative">
+                <div class="hero-text-box">
+                    <h1 class="display-4 fst-italic">Vilna, la joya del Báltico</h1>
+                    <p class="lead my-3">Una ciudad medieval que sorprende a cada esquina: barroco en cada iglesia,
+                        cafés en cada patio y una energía joven que no te esperas en pleno corazón de Lituania.</p>
+                    <p class="lead mb-0">
+                        <a href="#vilna" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Seguir leyendo
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Europa · Ciudad</strong>
+                        <h3 class="mb-0">Copenhague en tres días</h3>
+                        <div class="mb-1 text-body-secondary">Marzo 2025</div>
+                        <p class="card-text mb-auto">De Nyhavn a Christiania pasando por pasteles de canela: la capital
+                            danesa tiene mucho más que ofrecer de lo que cabe en una postal.</p>
+                        <a href="#copenhague" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Seguir leyendo
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/2018_-_Nyhavn_on_sunset.jpg/1920px-2018_-_Nyhavn_on_sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=gallery&utm_content=thumbnail"
+                            alt="Fotografía de Copenhague" class="featured-card-img">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success-emphasis">España · Festivales</strong>
+                        <h3 class="mb-0">Carnaval de Tenerife</h3>
+                        <div class="mb-1 text-body-secondary">Febrero 2025</div>
+                        <p class="mb-auto">El segundo carnaval más grande del mundo se vive con
+                            disfraces, calle, música y una isla que se transforma por completo.</p>
+                        <a href="#tenerife" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Seguir leyendo
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="https://www.carnivality.com/wp-content/uploads/tenerife-where-is-carnival.jpg"
+                            alt="Fotografía del Carnaval de Tenerife" class="featured-card-img">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <h3 class="pb-4 mb-4 fst-italic border-bottom">Últimas entradas</h3>
+
+                <article class="blog-post" id="vilna">
+
+                    <h2 class="display-5 link-body-emphasis mb-1">Vilna, la joya del Báltico</h2>
+                    <p class="mb-2"><a href="https://es.wikipedia.org/wiki/Vilna" target="_blank" rel="noopener"
+                            class="text-body-secondary small text-decoration-none">Wikipedia: Vilna</a></p>
+                    <p class="blog-post-meta">Noviembre de 2026 por <a href="#">Pablo Reboredo Fernández</a></p>
+
+                    <p>Vilna no era un destino que tuviera en mente hasta que apareció un vuelo barato y cambió por
+                        completo la idea del viaje. La capital de Lituania lleva tiempo ganándose fama de ser una de
+                        esas ciudades que sorprenden sin hacer ruido, y después de pasar allí cuatro días, entiendo
+                        perfectamente por qué.</p>
+
+                    <hr>
+
+                    <p>Su casco antiguo, declarado Patrimonio de la Humanidad por la UNESCO, está lleno de callejuelas
+                        adoquinadas, iglesias barrocas, patios escondidos y rincones donde siempre parece haber algo
+                        interesante por descubrir. Todo se mueve con calma, pero sin resultar monótono, y además los
+                        precios, comparados con los de otras capitales europeas, resultan bastante más amables de lo
+                        esperado.</p>
+
+                    <h2>Lo que no te puedes perder</h2>
+                    <p>De todos los lugares que visité, uno de los que más me llamó la atención fue el barrio de Užupis:
+                    </p>
+                    <blockquote class="blockquote">
+                        <p>La república independiente de Užupis es una de esas ideas que parecen sacadas de una broma,
+                            pero que terminan funcionando muy bien: un barrio de artistas con su propia constitución y
+                            su propio "presidente".</p>
+                    </blockquote>
+                    <p>Más allá de esa parte tan singular, merece la pena subir a la Torre Gediminas para ver la ciudad
+                        desde arriba y dejarse llevar por el Mercado Hales, donde abundan los productos locales, los
+                        embutidos y los quesos.</p>
+
+                    <h3>Consejos prácticos</h3>
+                    <p>Hay varias cosas que habría agradecido saber antes de ir:</p>
+                    <ul>
+                        <li>El transporte público es barato, funciona bien y merece la pena desde el primer día.</li>
+                        <li>Muchos restaurantes del casco antiguo tienen menú de mediodía por menos de 10 euros.</li>
+                    </ul>
+
+                    <p>Vilna deja la sensación de ser una ciudad que se disfruta sin prisas y que invita a volver. Si
+                        buscas un destino europeo diferente, con historia, buena comida y un ambiente auténtico, merece
+                        mucho la pena tenerla en cuenta.</p>
+
+                </article>
+
+                <article class="blog-post" id="copenhague">
+
+                    <h2 class="display-5 link-body-emphasis mb-1">Copenhague en tres días</h2>
+                    <p class="mb-2"><a href="https://es.wikipedia.org/wiki/Copenhague" target="_blank" rel="noopener"
+                            class="text-body-secondary small text-decoration-none">Wikipedia: Copenhague</a></p>
+                    <p class="blog-post-meta">Agosto de 2024 por <a href="#">Pablo Reboredo Fernández</a></p>
+
+                    <p>Tres días en Copenhague se quedan cortos, pero con algo de organización se pueden aprovechar
+                        bastante bien. La capital danesa tiene fama de ser cara, y lo es, aunque también compensa con
+                        muchas opciones gratuitas y planes sencillos que hacen que la visita merezca la pena.</p>
+
+                    <blockquote>
+                        <p>Nyhavn a primera hora de la mañana, antes de que lleguen los grupos, es una de las imágenes
+                            que mejor recuerdo de este viaje. Las casas de colores, los barcos de madera y <strong>el
+                                olor a café recién hecho</strong> de los locales del canal crean una escena difícil de
+                            olvidar.</p>
+                    </blockquote>
+
+                    <p>Más allá de la típica postal de Nyhavn, la ciudad ofrece mucho más: el parque Tivoli en pleno
+                        centro, el barrio alternativo de Christiania, el museo de arte moderno Louisiana a media hora en
+                        tren o, simplemente, la posibilidad de moverse en bicicleta y recorrerla como un local.</p>
+
+                    <h3>Dónde comer sin arruinarse</h3>
+                    <p>Copenhague no destaca precisamente por ser barata, pero sí hay opciones bastante razonables:</p>
+                    <table class="table table-bg-transparent">
+                        <thead>
+                            <tr>
+                                <th>Opción</th>
+                                <th>Precio medio</th>
+                                <th>Recomendado para</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mercado de Torvehallerne</td>
+                                <td>8-12 €</td>
+                                <td>Desayuno y almuerzo rápido</td>
+                            </tr>
+                            <tr>
+                                <td>Joe & the Juice</td>
+                                <td>5-8 €</td>
+                                <td>Café y algo ligero</td>
+                            </tr>
+                            <tr>
+                                <td>Restaurante danés de barrio</td>
+                                <td>20-30 €</td>
+                                <td>Cena tranquila</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Media diaria en comida</td>
+                                <td>~35 €</td>
+                                <td>Siendo comedido</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <p>En definitiva, Copenhague puede resultar cara, pero no inaccesible. Si vas con expectativas
+                        realistas y un presupuesto bien pensado, la experiencia compensa con creces.</p>
+                </article>
+
+                <article class="blog-post" id="tenerife">
+
+                    <h2 class="display-5 link-body-emphasis mb-1">Carnaval de Tenerife: una semana de locura organizada
+                    </h2>
+                    <p class="mb-2"><a href="https://es.wikipedia.org/wiki/Carnaval_de_Santa_Cruz_de_Tenerife"
+                            target="_blank" rel="noopener" class="text-body-secondary small text-decoration-none">
+                            Wikipedia: Carnaval de Santa Cruz de Tenerife</a></p>
+                    <p class="blog-post-meta">Febrero de 2026 por <a href="#">Pablo Reboredo Fernández</a></p>
+
+                    <p>He estado en muchas fiestas populares, pero el Carnaval de Santa Cruz de Tenerife juega en otra
+                        categoría. Durante más de dos semanas, la ciudad cambia por completo: hay disfraces muy
+                        trabajados, música a todas horas y una vida en la calle que no se parece a la de ningún otro
+                        momento del año.</p>
+
+                    <ul>
+                        <li>La Gala de elección de la Reina del Carnaval es un espectáculo por sí mismo: trajes enormes
+                            y horas de actuaciones en el recinto Ferial.</li>
+                        <li>El Coso, que es el desfile principal, llena las calles de comparsas, murgas y carrozas
+                            durante toda una tarde.</li>
+                        <li>El Entierro de la Sardina, con el que termina el carnaval, tiene un punto surrealista y
+                            emotivo al mismo tiempo.</li>
+                    </ul>
+
+                    <p>Si estás pensando en ir, conviene reservar alojamiento con bastante antelación porque la isla se
+                        llena. También merece la pena llevar algún disfraz, aunque sea sencillo: en carnaval, ir de
+                        calle hace que te sientas fuera de ambiente. Es una experiencia que repetiría sin dudarlo.</p>
+
+                </article>
+
+
+                <nav class="blog-pagination" aria-label="Paginación">
+                    <a class="btn btn-outline-primary rounded-pill" href="#">Entradas anteriores</a>
+                    <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Más recientes</a>
+                </nav>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+
+                    <div class="p-4 mb-3 rounded about-widget">
+                        <h4 class="fst-italic">Sobre el blog</h4>
+                        <p class="mb-0">Este blog recoge experiencias de viaje contadas de forma directa y realista.
+                            Aquí se comparten rutas, consejos prácticos y precios actualizados,
+                            junto con información útil que habría sido valiosa conocer antes de emprender
+                            cada destino, sin filtros ni idealizaciones.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="fst-italic">Entradas recientes</h4>
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#vilna">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Vilniaus_%C5%A0v._Pranci%C5%A1kaus_ir_%C5%A0v._Bernardin%C5%B3_ba%C5%BEny%C4%8Dia.jpg/960px-Vilniaus_%C5%A0v._Pranci%C5%A1kaus_ir_%C5%A0v._Bernardin%C5%B3_ba%C5%BEny%C4%8Dia.jpg?utm_source=commons.wikimedia.org&utm_campaign=parser&utm_content=thumbnail"
+                                        alt="Vilna" class="recent-post-img">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Vilna, la joya del Báltico</h6>
+                                        <small class="text-body-secondary">Noviembre de 2023</small>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#copenhague">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/2018_-_Christiansborg_from_the_Marble_Bridge.jpg/250px-2018_-_Christiansborg_from_the_Marble_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=gallery&utm_content=thumbnail"
+                                        alt="Copenhague" class="recent-post-img">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Copenhague en tres días</h6>
+                                        <small class="text-body-secondary">Agosto de 2024</small>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#tenerife">
+                                    <img src="https://www.webtenerife.com/elblog/wp-content/uploads/2024/02/38A1364-scaled-uai-2064x1377-1.jpg"
+                                        alt="Carnaval de Tenerife" class="recent-post-img">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Carnaval de Tenerife: una semana de locura organizada</h6>
+                                        <small class="text-body-secondary">Febrero de 2026</small>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="fst-italic">Archivo Reciente</h4>
+                        <ol class="list-unstyled mb-0">
+                            <li><a href="#">Mayo 2026</a></li>
+                            <li><a href="#">Abril 2026</a></li>
+                            <li><a href="#">Marzo 2026</a></li>
+                            <li><a href="#">Febrero 2026</a></li>
+                            <li><a href="#">Enero 2026</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="fst-italic">Encuéntrame en</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter / X</a></li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+        <p>&copy; 2026 Pablo Reboredo Fernández &middot; Blog de viajes</p>
+        <p class="mb-0"><a href="#">Volver arriba</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
